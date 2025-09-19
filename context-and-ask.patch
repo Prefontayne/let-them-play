@@ -1,0 +1,102 @@
+*** a/src/app/page.tsx
+--- b/src/app/page.tsx
+@@
+   return (
+     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 text-slate-900">
+       <header className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex items-start justify-between gap-4">
+         <div>
+           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
+             {CAMPAIGN.name}
+           </h1>
+           <p className="mt-3 text-slate-700 max-w-2xl">
+             A peaceful, nonpartisan community campaign asking Ottawa to use a <span className="font-semibold">Temporary Resident Permit (with conditions)</span> and to publish the legal basis for the decision — so the shows can proceed safely.
+           </p>
+           <p className="mt-2 text-sm text-slate-500">We condemn antisemitism and all hate; we reject incitement and violence.</p>
+         </div>
+         <div className="hidden sm:block text-sm text-slate-500 mt-1">{CAMPAIGN.handle}</div>
+       </header>
+ 
++      {/* Context block */}
++      <Section title="What’s happening (quick context)">
++        <div className="space-y-4">
++          <Card>
++            <h3 className="font-semibold mb-2">Canada barred Kneecap from entry (Sept 19, 2025)</h3>
++            <p>
++              Federal officials announced the Irish rap trio were deemed ineligible to enter ahead of planned October
++              shows in Toronto and Vancouver. Allegations referenced hate/violence and support for listed groups —
++              allegations the artists have publicly denied. This campaign does <span className="font-semibold">not</span> speak for the band;
++              it asks Ottawa for a transparent, proportionate remedy that safeguards the public while respecting free expression.
++            </p>
++          </Card>
++          <Card>
++            <h3 className="font-semibold mb-2">Who are Kneecap?</h3>
++            <p>
++              A Belfast-based, bilingual (Irish/English) rap trio known for political satire and provocative stage art.
++              They’ve drawn large crowds across the UK/Ireland and are widely covered by major outlets. Members state
++              they <span className="font-semibold">condemn attacks on civilians and deny supporting terrorist organisations</span>.
++            </p>
++          </Card>
++          <Card>
++            <h3 className="font-semibold mb-2">What was planned in Canada?</h3>
++            <p>
++              Four ticketed concerts were scheduled: <span className="font-semibold">Toronto (Oct 14–15, 2025)</span> and
++              <span className="font-semibold"> Vancouver (Oct 22–23, 2025)</span>.
++            </p>
++          </Card>
++        </div>
++      </Section>
++
+       <div className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200">
+         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap gap-3 items-center">
+           <button className="px-5 py-3 rounded-2xl shadow border hover:shadow-md" onClick={()=>setShowCallMP(true)}>Call your MP</button>
+           <button className="px-5 py-3 rounded-2xl shadow border hover:shadow-md" onClick={()=>mailToDraft(ministerEmail)}>Email the Ministers</button>
+           {CAMPAIGN.signupUrl ? (
+             <a className="px-5 py-3 rounded-2xl shadow text-white bg-emerald-600 hover:bg-emerald-700" href={CAMPAIGN.signupUrl}>Join the list</a>
+           ) : (
+             <a className="px-5 py-3 rounded-2xl shadow border" href="#join">Join the list</a>
+           )}
+           <button className="px-5 py-3 rounded-2xl shadow border hover:shadow-md" onClick={()=>setShowShare(true)}>Share this</button>
+         </div>
+       </div>
+ 
+       <Section title="Why this is reasonable">
+         <div className="grid md:grid-cols-3 gap-6">
+           <Card>
+             <h3 className="font-semibold mb-2">Proportionate remedy</h3>
+             <p>Canada can allow time-limited, supervised entry using a Temporary Resident Permit with enforceable conditions.</p>
+           </Card>
+           <Card>
+             <h3 className="font-semibold mb-2">Transparency builds trust</h3>
+             <p>Publishing the statutory basis and non-classified record avoids chilling effects on lawful cultural exchange.</p>
+           </Card>
+           <Card>
+             <h3 className="font-semibold mb-2">Anti-hate, pro-safety</h3>
+             <p>We explicitly condemn antisemitism and all hate, and reject incitement or violence. Safety plans and venue rules still apply.</p>
+           </Card>
+         </div>
+       </Section>
+ 
++      {/* Specific asks */}
++      <Section title="Our specific ask">
++        <div className="grid md:grid-cols-2 gap-6">
++          <Card>
++            <h3 className="font-semibold mb-2">1) Transparency</h3>
++            <p>Publish the statutory ground(s) and non-classified record relied upon for the inadmissibility finding. Canadians deserve to understand the basis for major arts restrictions.</p>
++          </Card>
++          <Card>
++            <h3 className="font-semibold mb-2">2) Proportionate remedy</h3>
++            <p>Use a <span className="font-semibold">Temporary Resident Permit (TRP)</span> with enforceable conditions (time-limited entry for show dates, venue rules, security plans, zero incitement/hate) so the performances can proceed safely.</p>
++          </Card>
++        </div>
++      </Section>
++
+       <Section title="Take action in 3 minutes" id="actions">
+         <div className="grid lg:grid-cols-3 gap-6">
+           <Card>
+             <h4 className="text-lg font-semibold mb-3">1) Call your MP</h4>
+             <p className="mb-4">Use our short script. Tip: include your postal code so staff can log you as a constituent.</p>
+             <div className="flex gap-3">
+               <button className="px-4 py-2 rounded-xl border" onClick={()=>setShowCallMP(true)}>View script</button>
+               <a className="px-4 py-2 rounded-xl border" href="#find-mp">Find my MP</a>
+             </div>
+           </Card>

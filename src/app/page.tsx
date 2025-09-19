@@ -172,7 +172,15 @@ Respectfully,
             <p className="mb-4">Use our short script. Tip: include your postal code so staff can log you as a constituent.</p>
             <div className="flex gap-3">
               <button className="px-4 py-2 rounded-xl border" onClick={()=>setShowCallMP(true)}>View script</button>
-              <a className="px-4 py-2 rounded-xl border" href="#find-mp">Find my MP</a>
+              <a
+  className="px-4 py-2 rounded-xl border"
+  href="https://www.ourcommons.ca/members/en"
+  target="_blank"
+  rel="noreferrer"
+>
+  Find my MP
+</a>
+
             </div>
           </Card>
           <Card>

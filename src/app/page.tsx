@@ -246,7 +246,19 @@ Respectfully,
           <div className="mt-3">
             <button className="px-4 py-2 rounded-xl border" onClick={()=>copy(mpScript, setCopyBtn1)}>{copyBtn1}</button>
           </div>
-          <div id="find-mp" className="mt-6 text-sm text-slate-500">Don’t know your MP? Search your federal electoral district on the House of Commons website.</div>
+          <div id="find-mp" className="mt-6 text-sm text-slate-500">
+  Don’t know your MP? Use the postal-code lookup on the House of Commons website.
+  <br />
+  <a
+    className="underline"
+    href="https://www.ourcommons.ca/members/en"
+    target="_blank"
+    rel="noreferrer"
+  >
+    Find my MP
+  </a>
+</div>
+
         </Modal>
       )}
 
